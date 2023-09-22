@@ -1,0 +1,2 @@
+FLASK_APP=taskedapp
+FLASK_ENV=development

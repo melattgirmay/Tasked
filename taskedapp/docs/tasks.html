@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Task App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+        <div class="center-box">
+            <div class="center-content">
+                <h2 class="header">Any Plans Today?</h2>
+                <form action="{{ url_for('main.add_task') }}" method="POST" role="form">
+                    <div class="input-group-box">
+                        <div class="input-group">
+                            <input name="new-task" type="text" class="form-control" placeholder="Enter task e.g. Delete junk files" aria-label="task" aria-describedby="add-btn">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default" id="add-btn">
+                                    <svg width="31" height="31">
+                                        <foreignObject width="100%" height="100%">
+                                            <img src="{{ url_for('static', filename='icons/add-2.png') }}" width="32" height="32" />
+                                        </foreignObject>
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+            <ul class="list-group t20">
+                {% for task in tasked %}
+                <li class="list-group-item task-item" data-task-id="{{ task._id }}" >
+                    <!-- Inside the loop for tasks -->
+                    <div class="task-content">
+                        <div class="task-icon">
+                                <svg width="31" height="31">
+                                    <foreignObject width="100%" height="100%">
+                                        <img src="{{ url_for('static', filename='icons/time.png') }}" width="32" height="32" />
+                                    </foreignObject>
+                                </svg>                     
+                        </div>
+                        <div class="task-details">
+                            <a class="task-link" >
+                                <span class="task-text {% if task.complete %}completed-text{% endif %}">{{ task.text }}</span>
+                            </a>
+                        </div>
+                        <div class="task-actions">
+                            <form action="{{ url_for('main.complete_task', task_id=task._id) }}" method="POST" style="display: inline;">
+                                <button type="submit" class="btn btn-success btn-xs">
+                                    <svg width="31" height="31">
+                                        <foreignObject width="100%" height="100%">
+                                            <img src="{{ url_for('static', filename='icons/validation-2.png') }}" width="32" height="32" />
+                                        </foreignObject>
+                                    </svg>
+                                </button>
+                            </form>
+                            <form action="{{ url_for('main.delete_task', task_id=task._id) }}" method="POST" style="display: inline;">
+                                <button type="submit" class="btn btn-danger btn-xs">
+                                    <svg width="31" height="31">
+                                        <foreignObject width="100%" height="100%">
+                                            <img src="{{ url_for('static', filename='icons/cancel-2.png') }}" width="32" height="32" />
+                                        </foreignObject>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>               
+            
+            <div class="row t10">
+                <div class="col-lg-6">
+                    <form action="{{ url_for('main.delete_all') }}" method="POST">
+                        <button type="submit" class="btn btn-delete">DELETE ALL</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <form action="{{ url_for('main.delete_completed') }}" method="POST">
+                        <button type="submit" class="btn btn-delete">DELETE COMPLETED</button>
+                    </form>
+                </div>
+            </div>
+                 
+            <div class="top-right">
+                <a href="{{ url_for('main.logout') }}" class="btn btn-logout">Logout</a>
+            </div>
+        </div>      
+            
+    </body>
+</html>

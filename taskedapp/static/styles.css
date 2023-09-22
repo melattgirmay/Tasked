@@ -1,0 +1,135 @@
+body {
+    background: #f6adc77f;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.center-box {
+    background: white;
+    padding: 25px;
+    margin: 10% auto;
+    max-width: 400px;
+    box-shadow: 5px 5px 25px #d87093;
+    border-radius: 10px;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.completed-text {
+    text-decoration: line-through;
+}
+
+.btn-delete,
+.btn-logout, .btn-secondary {
+    text-decoration: none;
+    background: #E75480;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button {
+    cursor: pointer;
+}
+
+.top-right {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+}
+
+.top-right-2 {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
+.collection-list {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+}
+
+.collections-box {
+    background: white;
+    padding: 5px;
+    margin: 1% auto;
+    box-shadow: 5px 5px 25px #d87093;
+    border-radius: 10px;
+}
+
+/* Style the task content container */
+.task-content {
+    display: flex;
+    align-items: center;
+}
+
+.collection-content {
+    display: flex;
+    align-items: center;
+}
+
+.input-group {
+    margin-left: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.create-collection-sidebar {
+    display: flex;
+    align-items: center;
+}
+
+.btn-default, .btn-primary {
+    margin-left: 5px;
+}
+
+/* Style the task icon */
+.task-icon {
+    margin-right: 5px;
+}
+
+/* Style the task actions (buttons) */
+.task-actions {
+    margin-left: auto; /* Push the actions to the right */
+}
+
+.task-text {
+    font-size: 17px;
+}
+
+.task-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* Remove list styles for list items */
+.task-item, .collection-item {
+    list-style: none;
+}
+
+.row.t10 {
+    margin-top: 20px; /* Adjust the top margin as needed to create more space */
+    display: flex;
+    justify-content: space-between; /* Align buttons to opposite sides */
+}
+
+.btn-primary {
+    border: none;
+    background-color: white;
+}
+
+/* Initially hide the create collection form */
+.collection-list.hidden {
+    display: none;
+    /* Add any other styling you need for hiding the form */
+}
+
+ul {
+    padding-left: 0; /* Remove the default padding */
+}
+

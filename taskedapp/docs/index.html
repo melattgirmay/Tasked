@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tasked</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+        <style>
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                padding: 0;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            h1 {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 4pc;
+                color: #ffc1cc;
+
+            }
+            .circle {
+                width: 100px;
+                height: 80px;
+                border: 2px solid rgb(255, 255, 255);
+                border-radius: 90px;
+                padding: 20px;
+                text-align: center;
+                font-size: 15pt;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                position: fixed;
+                left: 24%;
+                top: 25%;
+            }
+            .circle2 {
+                width: 100px;
+                height: 80px;
+                border: 2px solid rgb(255, 255, 255);
+                border-radius: 90px;
+                padding: 20px;
+                text-align: center;
+                font-size: 15pt;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                position: fixed;
+                left: 25%;
+                top: 25%;
+            }
+            @keyframes colors {
+                0% { background-color: rgba(255, 192, 203, 0.548); }
+                100% { background-color: rgba(255, 0, 128, 0.845); }
+            }
+            .circle, .circle2 {
+                animation-name: colors;
+                animation-duration: 700ms;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                transform: rotate(-10deg);
+            }
+            .box {
+                width: 300px;
+                height: 200px;
+                background-color: #ffc1cce0;
+                border: 2px solid rgba(245, 245, 245, 0.452);
+                border-radius: 50px;
+                padding: 20px;
+                text-align: center;
+                font-family: serif;
+                font-style: italic;
+                font-size: 3pc;
+                color: rgb(0, 0, 0);
+                line-height: 1.5; 
+                position: fixed;
+                left: 30%;
+                top: 33%;
+            }
+            .box2 {
+                width: 230px;
+                height: 20px;
+                background-color: rgba(255, 255, 255, 0.553);
+                border: 2px solid #ffc1cc;
+                border-radius: 5px;
+                padding: 20px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+                position: fixed;
+                left: 4%;
+                top: 60%;
+            }
+            .box3 {
+                width: 230px;
+                height: 20px;
+                background-color: rgba(255, 255, 255, 0.553);
+                border: 2px solid #ffc1cc;
+                border-radius: 5px;
+                padding: 20px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+                position: fixed;
+                left: 4%;
+                top: 70%;
+            }
+            .box4 {
+                width: 230px;
+                height: 20px;
+                background-color: rgba(255, 255, 255, 0.553);
+                border: 2px solid #ffc1cc;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 15px;
+                line-height: 1.5;
+                position: fixed;
+                left: 4%;
+                top: 80%;
+            }
+            form{
+                font-family: 'Times New Roman', Times, serif;
+                text-decoration: none;
+                text-align: center;
+                padding: 20px;
+                width: 300px;
+                margin: 0 auto;
+                border-radius: 5px;
+                background-color: #ffc1cc60;
+                position: fixed;
+                right: 10%;
+                top: 35%; 
+            }
+            #UR{
+                font-family: serif;
+                font-style: italic;
+                font-size: 2cap;
+                color: rgb(0, 0, 0);
+                position: fixed;
+                right: 15%;
+                top: 25%; 
+            }
+            #TASKS{
+                font-family: serif;
+                font-style: italic;
+                font-size: 2pc;
+                color: rgb(0, 0, 0);
+                position: fixed;
+                left: 11%;
+                top: 49%;
+            }
+            #sep {
+                width: 100%;
+                height: 3%;
+                background-color: #ffc1cc60;
+                font-size: 15px;
+                position: fixed;
+                top: 17%;
+            }
+            #con {
+                text-decoration: none;
+                color: black;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 17px;
+                position: fixed;
+                top: 19.5%; 
+                right: 10%;  
+            }
+            #signin {
+                text-decoration: none;
+                color: black;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 17px;
+                position: fixed;
+                top: 19.5%; 
+                right: 16%;  
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid" id="wrapper">
+            <h1>&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;Tasked</h1>
+            <p id="sep"></p>
+            <a id="con" href="./contact.html"><b><i>Contact</i></b></a>
+            <a id="signin" href="./login"><b><i>Sign In</i></b></a>
+            <div class="box">
+                <p><b>Back to school shopping</b></p>
+            </div>
+            <h2 id="TASKS">Tasks</h2>
+            <div class="box2">
+                <p>4:00 pm - Back to school shopping</p>
+            </div>
+            <div class="box3">
+                <p>6:00 pm - Video Call with Mike</p>
+            </div>
+            <div class="box4">
+                <p>8:00 pm - Meditate</p>
+            </div>
+            <div class="circle">
+            </div>
+            <div class="circle2">
+                <p>In 30 minutes</p>
+            </div>
+        <h2 id="UR">User Registration</h2>
+        
+        <form action="{{ url_for('main.register') }}" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+      
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required><br><br>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
+      
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br><br>
+      
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+          <input type="submit" value="Sign Up">
+        </form>
+        </div>
+    </body>
+</html>
